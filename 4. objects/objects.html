@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<img src="mustang.jpg" width="150" height="210" -webkit-filter: grayscale(100%); filter: grayscale(100%);>
+	<script type="text/javascript">
+		var person={}//create object person//
+		person['firstname']='Madison';
+		person['lastname']='Kanna';
+		document.write(person.firstname);
+		document.write("<br>");
+		document.write(person.lastname);
+document.write("<br>");
+document.write("<br>");
+
+		var car = {    // create object cat
+  carname : "MUSTANG",
+  company  : "FORD",
+  maxspeed    : 320,
+  color  : "red"
+};
+document.write('carname:'+" "+car.carname+" "+'Comapany:'+car.company+" "+'maxspeed:'+car.maxspeed);
+
+document.write("<br>");
+document.write("<br>");
+document.write('JavaScript Objects are Mutable');
+var x=car;
+x.maxspeed=350;  // This will change both x.maxspped and car.maxspeed
+		document.write(car.maxspeed);
+        document.write("<br>");
+        document.write(x.maxspeed);
+
+
+	</script>
+
+</body>
+</html>
