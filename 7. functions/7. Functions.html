@@ -1,0 +1,22 @@
+<html>
+   <head>  
+      <script type = "text/javascript">
+         function concatenate(a, b) {
+            return a+b;
+         }
+         function secondFunction() {
+            var result;
+            result = concatenate(5, 2);
+            document.write ('sum of 5+2='+result );
+         }
+      </script>      
+   </head>
+   
+   <body>
+      <p>Click the following button to call the function</p>      
+      <form>
+         <input type = "button" onclick = "secondFunction()" value = "Call Function">
+      </form>      
+      <p>Use different parameters inside the function and then try...</p>  
+  </body>
+</html>
