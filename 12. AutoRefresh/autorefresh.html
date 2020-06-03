@@ -5,3 +5,21 @@
 Auto Refresh:
 You can also use JavaScript to refresh the page automatically after a given time period. 
 Here setTimeout() is a built-in JavaScript function which can be used to execute another function after a given time interval.*/
+<html>
+   <head>
+      
+      <script type = "text/JavaScript">
+         <!--
+            function AutoRefresh( t ) {
+               setTimeout("location.reload(true);", t);
+            }
+         //-->
+      </script>
+      
+   </head>
+   
+   <body onload = "JavaScript:AutoRefresh(5000);">
+      <p>This page will refresh every 5 seconds.</p>
+   </body>
+   
+</html>
