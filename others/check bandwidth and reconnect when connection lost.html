@@ -1,14 +1,21 @@
-
 <!DOCTYPE html>
 <html>
 <title>speed test</title>
 <head>
 <script>
+	function AutoRefresh( t ) {
+               setTimeout("location.reload(true);", t);
+            }
 
 /*
 It's possible to some extent but won't be really accurate, the idea is load image with a known file size then in its onload event measure how much time passed until that event was triggered, and divide this time in the image file size.*/
-var imageAddr = "http://www.kenrockwell.com/contax/images/g2/examples/31120037-5mb.jpg"; 
-var downloadSize = 4995374; //bytes
+var imageAddr = "https://images.unsplash.com/photo-1535332371349-a5d229f49cb5?ixlib=rb-1.2.1&w=1000&q=80"; 
+var downloadSize = 499; //bytes
+var count=0;
+
+               
+            
+
 
 function ShowProgressMessage(msg) {
     if (console) {
@@ -20,6 +27,8 @@ function ShowProgressMessage(msg) {
             }
         }
     }
+
+
     
     var oProgress = document.getElementById("progress");
     if (oProgress) {
@@ -49,12 +58,19 @@ function MeasureConnectionSpeed() {
     
     download.onerror = function (err, msg) {
         ShowProgressMessage("You are Offline");
-    console.log('Socket is closed. Reconnect will be attempted in 1 second.');
+       
+        if(count<5){
+    console.log('Socket is closed. Reconnect will be attempted in 2 second.');
     setTimeout(function() {
+    	count++;
       InitiateSpeedDetection();
-    }, 1000);
+    }, 2000);
 
+}
+else
+console.log("time out");
     }
+    
     
     startTime = (new Date()).getTime();
     var cacheBuster = "?nnn=" + startTime;
@@ -76,12 +92,8 @@ function MeasureConnectionSpeed() {
     }
 
 }
-
-
 </script>
-
-
-	
-
-</body>
+<body onload = "JavaScript:AutoRefresh(12000);">
+      <p>This page will refresh every 12 seconds.</p>
+   </body>
 </html>
